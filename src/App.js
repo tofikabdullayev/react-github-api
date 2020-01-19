@@ -1,27 +1,32 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
-import Alert from "./components/Alert";
-import { AlertState } from "./context/alert/alertState";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Profile from './pages/Profile';
+import Alert from './components/Alert';
+import { AlertState } from './context/alert/alertState';
+import { GithubState } from './context/github/githubState';
+import Repos from './pages/Repos';
 
 function App() {
   return (
-    <AlertState>
-      <BrowserRouter>
-        <Navbar />
-        <div className="container pt-4">
-          <Alert text="Test" />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/profile/:name" component={Profile} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </AlertState>
+    <GithubState>
+      <AlertState>
+        <BrowserRouter>
+          <Navbar />
+          <div className="container pt-4">
+            <Alert />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/repos" component={Repos} />
+              <Route path="/about" component={About} />
+              <Route path="/profile/:name" component={Profile} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </AlertState>
+    </GithubState>
   );
 }
 

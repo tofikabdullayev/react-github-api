@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -7,8 +7,13 @@ const Navbar = () => {
       <div className="navbar-brand">Github Search</div>
       <ul className="navbar-nav">
         <li className="navbar-item">
-          <NavLink to="/" className="nav-link">
-            Home
+          <NavLink to="/" exact className="nav-link">
+            Users
+          </NavLink>
+        </li>
+        <li className="navbar-item">
+          <NavLink to="/repos" className="nav-link">
+            Repositories
           </NavLink>
         </li>
         <li className="navbar-item">
