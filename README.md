@@ -1,1 +1,1 @@
-Live Demo: [HERE](https://abdullayevtofig-github-search.firebaseapp.com){:target="\_blank"}
+Live Demo: [HERE](https://abdullayevtofig-github-search.firebaseapp.com)
